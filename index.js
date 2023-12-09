@@ -5,11 +5,8 @@ import path from 'path'
 
 const app = express()
 
-const __filename = new URL(import.meta.url).pathname
-const __dirname = path.dirname(__filename)
-
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'))
+  res.sendFile(path.resolve('index.html'))
 })
 
 app.get('/:emoji', async (req, res) => {
